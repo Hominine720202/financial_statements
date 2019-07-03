@@ -1,0 +1,14 @@
+version: '3'
+services:
+  jupyter-nb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: jupyter-nb
+    ports:
+      - 8888:8888
+    volumes:
+      - ./src/:/home/jovyan/work
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    container_name: jupyter-nb
